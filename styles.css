@@ -1,0 +1,97 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff6ec7, #ff9a9e); /* Dégradé rose et corail */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1 {
+    font-size: 5em;
+    margin-bottom: 0.2em;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Animation de particules */
+@keyframes particleMove {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Style des particules (étoiles et cœurs) */
+.particle {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: particleMove 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: gold;
+}
+
+.heart {
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    background-color: #ff1493;
+}
+
+/* Effet d'onde lumineuse */
+@keyframes lightPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+.container h1 {
+    animation: lightPulse 2s infinite;
+}
