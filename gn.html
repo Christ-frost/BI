@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonne nuit, mon amour</title>
+  <style>
+    /* Fond étoilé animé */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background: linear-gradient(to bottom, #020111 10%, #3a1c71 50%, #000000 90%);
+      position: relative;
+    }
+
+    /* Ajout d’étoiles scintillantes */
+    .stars {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: repeat;
+      animation: twinkle 6s infinite alternate ease-in-out;
+      opacity: 0.6;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.3; }
+      100% { opacity: 0.8; }
+    }
+
+    /* Ajout d'une lueur brumeuse */
+    .mist {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 60%);
+      animation: mistAnimation 8s infinite alternate ease-in-out;
+    }
+
+    @keyframes mistAnimation {
+      0% { opacity: 0.2; }
+      100% { opacity: 0.5; }
+    }
+
+    /* Conteneur central */
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Style du texte */
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Animation d'apparition du texte */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Création des cœurs */
+    .heart {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 5s infinite ease-in-out;
+      opacity: 0.8;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      background: red;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    .heart:before {
+      top: -25px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 25px;
+      top: 0;
+    }
+
+    /* Animation des cœurs qui montent */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Différentes positions et vitesses des cœurs */
+    .heart:nth-child(2) {
+      left: 10%;
+      animation-duration: 4s;
+    }
+
+    .heart:nth-child(3) {
+      left: 30%;
+      animation-delay: 1s;
+      animation-duration: 5s;
+    }
+
+    .heart:nth-child(4) {
+      left: 50%;
+      animation-delay: 2s;
+      animation-duration: 4.5s;
+    }
+
+    .heart:nth-child(5) {
+      left: 70%;
+      animation-delay: 3s;
+      animation-duration: 6s;
+    }
+
+    .heart:nth-child(6) {
+      left: 90%;
+      animation-delay: 4s;
+      animation-duration: 5.5s;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Fond animé -->
+  <div class="stars"></div>
+  <div class="mist"></div>
+
+  <div class="container">
+    <h1> ❤️Bonne nuit 🌃 Djamila Fais de beaux rêves 😘❤️</h1>
+  </div>
+
+  <!-- Cœurs animés -->
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+  <div class="heart"></div>
+
+</body>
+</html>
